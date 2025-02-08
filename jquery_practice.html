@@ -7,29 +7,62 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
 <body>
-<h1>Animal food (am hungry)</h1>
+<h1 id="header">Animal food</h1>
 
 <div class="container">
     <div class="cow">
-        <img src="Images/polish cow meme.gif" alt="polish cow">
-        <p>The cow is lowkey yummy because beesechurger</p>
-        <button>Yum</button>
+        <h2>Cow (Scientific name: Bos Taurus)</h2>
+        <img src="Images/polish cow meme.gif" alt="polish cow" id="cowgif">
+        <p>The cow is yummy because you can make cheeseburgers and shepard's pie from it. These are very yummy foods.</p>
+        <button id="eatcow">Eat</button>
     </div>
 
     <div class="chicken">
-        <img src="./Images/drippy chicken.jpg" alt="chicken with drip" width="300px" height="300px">
-        <p>The chicken is lowkey yummy because chicken wing</p>
-        <button>Yum</button>
+        <h2>Chicken (Scientific name: Gallus gallus domesticus)</h2>
+        <img src="./Images/drippy chicken.png" alt="chicken with drip" width="220px" height="270px" id="chickendrip">
+        <p>The chicken is yummy because you can have chicken nuggets and wings from it. These are very yummy foods.</p>
+        <button id="eatchicken">Eat</button>
     </div>
 
     <div class="options">
-        <h2>Which one would you eat?</h2>
-        <input type="radio" name="food" id="chiken"> Chicken
-        <input type="radio" name="food" id="cow"> Cow
+        <h2>Which one is your favorite?</h2>
+        <input type="radio" name="food" id="chicken option"> Chicken
+        <input type="radio" name="food" id="cow option">Cow
     </div>
+
+    <button id="uneat">Uneat Animals</button>
     
 </div>
     <script>
+        $("body").css({
+            'background-color': 'cornflowerblue',
+            'color': 'white',
+            'font-family': 'Verdana',
+            'text-align': 'center'
+        })
+
+        $(".cow, .chicken").css({
+            'border': '3px solid gray',
+            'padding': '10px'
+        })
+
+        $("#cowgif, #chickendrip").css({'border': '5px double gray'})
+
+        $(document).ready(function(){
+            $("#eatcow").click(function(){
+                $(".cow").slideUp(2000, 0.0)
+            })
+
+            $("#eatchicken").click(function(){
+                $(".chicken").slideUp(2000, 0.0)
+            })
+
+            $("#uneat").click(function(){
+                $(".chicken").slideDown(2000, 0.0)
+                $(".cow").slideDown(2000, 0.0)
+            })
+
+        })
 
     </script>
 </body>
